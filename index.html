@@ -1,1 +1,201 @@
-Website for Analogical Net Coming Soon !
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Analogical Networks casts fine-grained 3D visual parsing as analogy-forming inference.">
+  <meta name="keywords" content="Analogical Networks">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analogy-Forming Transformers for Few-Shot 3D Parsing </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Analogy-Forming Transformers for Few-Shot 3D Parsing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://nickgkan.github.io/">Nikolaos Gkanatsios</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://msingh27.github.io/">Mayank Singh</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://zfang399.github.io/">Zhaoyuan Fang</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://shubhtuls.github.io/">Shubham Tulsiani</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a><sup></sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup></sup>Carnegie Mellon University</span>
+            <br>
+            <small><sup>*</sup>Equal contribution</small>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=SRIQZTh0IK"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/nickgkan/3DGF/tree/iclr2023/src"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/mem_modulation.png"
+                class="interpolation-image">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence. Parts shown in black in columns 3 and 6 are decoded from scene-agnostic queries and thus they are not in correspondence to any parts of the memory scene. Conditioning the same input point cloud on memories with finer or coarser labellings results in  segmentation of analogous granularity (3rd row).
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <span class="dnerf">Analogical Networks</span>, a model that casts fine-grained 3D visual parsing as analogy-forming inference: instead of mapping input scenes to part labels, which is hard to adapt in a few-shot manner to novel inputs, our model retrieves related scenes from memory and their corresponding part  structures, and  predicts <i>analogous</i> part structures  in the input object 3D point cloud, via an end-to-end learnable modulation mechanism. By conditioning on more than one retrieved memories, compositions of  structures are predicted, that mix and match parts across the retrieved memories.   One-shot, few-shot or many-shot learning are treated  uniformly in Analogical Networks, by conditioning on the appropriate set of memories, whether taken from a single, few or many memory exemplars, and inferring analogous parses. 
+          </p>
+          <p>
+            We show Analogical Networks are competitive in many-shot settings and outperform existing state-of-the-art detection transformer models on part segmentation in few-shot scenarios, as well as paradigms of meta-learning and few-shot learning. Our model successfully parses instances of novel object categories simply by expanding its memory, without any weight updates. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+  <br><br><br><br><br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Analogical Networks Architecture</h2>
+        <img width="100%" src="./static/images/parts_arch.jpg">
+        <br><br>
+        <div class="content has-text-justified">
+          <p>
+            <span class="dnerf">Analogical Networks</span> are comprised of retriever and modulator sub-networks. In the retriever,
+            labelled memories and the (unlabelled) input point
+            cloud are separately encoded into feature embeddings and the top-k most similar memories to the
+            present input are retrieved. In the modulator, each retrieved memory is encoded into a set of part
+            feature embeddings and initializes a query that is akin to a slot to be “filled” with the analogous part
+            entity in the present scene. These queries are appended to a set of learnable parametric scene-agnostic
+            queries. The modulator contextualizes the queries with the input point cloud through iterative self
+            and cross-attention operations that also update the point features of the input. When a memory part
+            query decodes a part in the input point cloud, we say the two parts are put into correspondence by the
+            model. We color them with the same color to visually indicate this correspondence
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <br><br>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{gkanatsios2021analogical,
+  author    = {Gkanatsios, Nikolaos and Singh, Mayank and Fang, Zhaoyuan and Tulsiani, Shubham and Fragkiadaki, Katerina},
+  title     = {Analogy-Forming Transformers for Few-Shot 3D Parsing},
+  journal   = {ICLR},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="#">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <h2 class="subtitle has-text-centered">
+        <div class="content">
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+            We thank the authors for open-sourcing the source code. 
+        </div>
+      </h2>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
