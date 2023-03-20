@@ -67,7 +67,9 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup></sup>Carnegie Mellon University</span>
             <br>
-            <small><sup>*</sup>Equal contribution</small>
+            <font size="3">
+              <sup>*</sup>Equal contribution
+            </font>
           </div>
 
           <div class="column has-text-centered">
@@ -107,7 +109,8 @@
         <img src="./static/images/mem_modulation.png"
                 class="interpolation-image">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence. Parts shown in black in columns 3 and 6 are decoded from scene-agnostic queries and thus they are not in correspondence to any parts of the memory scene. Conditioning the same input point cloud on memories with finer or coarser labellings results in  segmentation of analogous granularity (3rd row).
+        <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence.
+        <!--  Parts shown in black in columns 3 and 6 are decoded from scene-agnostic queries and thus they are not in correspondence to any parts of the memory scene. Conditioning the same input point cloud on memories with finer or coarser labellings results in  segmentation of analogous granularity (3rd row). -->
       </h2>
     </div>
   </div>
@@ -123,8 +126,6 @@
         <div class="content has-text-justified">
           <p>
             We present <span class="dnerf">Analogical Networks</span>, a model that casts fine-grained 3D visual parsing as analogy-forming inference: instead of mapping input scenes to part labels, which is hard to adapt in a few-shot manner to novel inputs, our model retrieves related scenes from memory and their corresponding part  structures, and  predicts <i>analogous</i> part structures  in the input object 3D point cloud, via an end-to-end learnable modulation mechanism. By conditioning on more than one retrieved memories, compositions of  structures are predicted, that mix and match parts across the retrieved memories.   One-shot, few-shot or many-shot learning are treated  uniformly in Analogical Networks, by conditioning on the appropriate set of memories, whether taken from a single, few or many memory exemplars, and inferring analogous parses. 
-          </p>
-          <p>
             We show Analogical Networks are competitive in many-shot settings and outperform existing state-of-the-art detection transformer models on part segmentation in few-shot scenarios, as well as paradigms of meta-learning and few-shot learning. Our model successfully parses instances of novel object categories simply by expanding its memory, without any weight updates. 
           </p>
         </div>
@@ -177,7 +178,7 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
+<!--     <div class="content has-text-centered">
       <a class="icon-link"
          href="#">
         <i class="fas fa-file-pdf"></i>
@@ -185,12 +186,13 @@
       <a class="icon-link" href="" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
-    </div>
+    </div> -->
     <div class="columns is-centered">
       <h2 class="subtitle has-text-centered">
         <div class="content">
+            <small>
             This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
-            We thank the authors for open-sourcing the source code. 
+            We thank the authors for open-sourcing the source code. </small>
         </div>
       </h2>
     </div>
