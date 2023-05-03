@@ -43,7 +43,7 @@
 <body>
 
 <section class="hero">
-  <div class="hero-body">
+  <!-- <div class="hero-body"> -->
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
@@ -86,7 +86,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/nickgkan/3DGF/tree/iclr2023/src"
+                <a href="https://github.com/nickgkan/analogicalnets"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -94,31 +94,38 @@
                   <span>Code</span>
                   </a>
               </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2304.14382"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
             </div>
 
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-        <img src="./static/images/mem_modulation.png"
-                class="interpolation-image">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence.
-        <!--  Parts shown in black in columns 3 and 6 are decoded from scene-agnostic queries and thus they are not in correspondence to any parts of the memory scene. Conditioning the same input point cloud on memories with finer or coarser labellings results in  segmentation of analogous granularity (3rd row). -->
-      </h2>
-    </div>
+    
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
   <div class="container is-max-desktop">
+      <center>
+      <iframe width="700" height="500"
+      src="https://www.youtube.com/embed/mYoh8FBwYv8">
+      </iframe>
+      </center>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -129,12 +136,18 @@
             We show Analogical Networks are competitive in many-shot settings and outperform existing state-of-the-art detection transformer models on part segmentation in few-shot scenarios, as well as paradigms of meta-learning and few-shot learning. Our model successfully parses instances of novel object categories simply by expanding its memory, without any weight updates. 
           </p>
         </div>
+        <img src="./static/images/mem_modulation.png"
+                class="interpolation-image">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence.
+        <!--  Parts shown in black in columns 3 and 6 are decoded from scene-agnostic queries and thus they are not in correspondence to any parts of the memory scene. Conditioning the same input point cloud on memories with finer or coarser labellings results in  segmentation of analogous granularity (3rd row). -->
+      </h2>
       </div>
     </div>
     <!--/ Abstract. -->
 
   </div>
-  <br><br><br><br><br>
+  <br><br>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
@@ -159,9 +172,7 @@
     </div>
   </div> 
 
-  <br><br>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
