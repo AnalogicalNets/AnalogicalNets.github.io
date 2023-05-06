@@ -122,9 +122,11 @@
 <section class="section">
   <div class="container is-max-desktop">
       <center>
-      <iframe width="700" height="500"
-      src="https://www.youtube.com/embed/mYoh8FBwYv8?start=5">
+      <div class="video-container">
+      <!-- <iframe width="700" height="500" -->
+      <iframe src="https://www.youtube.com/embed/mYoh8FBwYv8?start=5" frameborder="0" allowfullscreen>
       </iframe>
+      </div>
       </center>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -165,7 +167,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <img src="./static/images/mem_modulation.png"
+        <img src="./static/images/mem_modulation.gif"
                 class="interpolation-image">
       <h2 class="content has-text-justified">
         <span class="dnerf">Analogical Networks</span> form analogies between retrieved memories and the input scene by using memory part encodings  as queries to localize corresponding parts in the  scene. Retrieved  memories (2nd and 5th columns)  modulate segmentation of the  input 3D point cloud (1st and 4th columns, respectively).   We indicate corresponding parts between the memory and the input scene with the same color.  Cross-object part correspondences emerge even without any part association or semantic part labelling supervision (5th row). For example, the model learns to correspond the parts of a clock and a TV set,  without ever trained with such cross scene part correspondence.
